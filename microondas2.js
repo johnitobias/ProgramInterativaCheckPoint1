@@ -1,32 +1,35 @@
 const pratos = {
-    1: { nome: 'Pipoca', tempo: 10 },
-    2: { nome: 'Macarrão', tempo: 8 },
-    3: { nome: 'Carne', tempo: 15 },
-    4: { nome: 'Feijão', tempo: 12 },
-    5: { nome: 'Brigadeiro', tempo: 8 },
+    1: { nome: 'Pipoca', tempopadrao: 10 },
+    2: { nome: 'Macarrão', tempopadrao: 8 },
+    3: { nome: 'Carne', tempopadrao: 15 },
+    4: { nome: 'Feijão', tempopadrao: 12 },
+    5: { nome: 'Brigadeiro', tempopadrao: 8 }
   };
   
-  function fazerPrato(numeroPrato, tempo) {
-    const prato = pratos[numeroPrato];
+  function fazerPrato(nPrato, tempo) {
+    const prato = pratos[nPrato];
   
     if (!prato) {
       return console.log('Prato inexistente');
     }
   
     let mensagem;
-    const tempoPadrao = prato.tempo;
+    const tempoPadrao = prato.tempopadrao;
   
     if (tempo < tempoPadrao) {
+      console.log('Prato pronto, bom apeite!!!');
       mensagem = 'Tempo insuficiente';
     } else if (tempo > tempoPadrao * 2 && tempo <= tempoPadrao * 3) {
+      console.log('Prato pronto, bom apeite!!!');
       mensagem = 'A comida queimou';
-    } else if (tempo > tempoPadrao * 3) {
+    } else if (tempo > tempoPadrao * 3) {      
       mensagem = 'Kabummm';
+      console.log('Prato pronto, bom apeite!!!');
     } else {
       mensagem = 'Prato pronto, bom apeite!!!';
     }
   
     return console.log(mensagem);
   }
-
-  fazerPrato(2, 40);
+  //fazerprato(numeroPrato, tempo escolhido)
+  fazerPrato(5, 10);
